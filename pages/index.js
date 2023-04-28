@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
+import Head from 'next/head';
 
 export default function Home() {
 
@@ -44,6 +45,17 @@ export default function Home() {
   }
   return (
     <>
+      <Head>
+          <title>Narrator</title>
+          <meta property="og:title" content={ `Narrator` }></meta>
+
+      </Head>
+      <Head>
+          <meta property="og:title" content={ `Narrator` }></meta>
+          <meta property="og:type" content="website"></meta>
+          <meta property="og:image" content={'https://dotzkorea.s3.ap-northeast-2.amazonaws.com/narrator/asset/narrator_logo.png'}></meta>
+          <meta property="og:description" content={ '인공지능으로 만든 나만의 이야기' }></meta>
+      </Head>
       <div>hello world</div>
       <input value={prompt} onChange={e => setPrompt(e.target.value)}/>
       <button onClick={e => submit()}>send</button>
